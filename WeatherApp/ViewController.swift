@@ -7,17 +7,29 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, LocationMangerDelegate {
+    var locationManager = LocationManager.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        LocationManager.sharedInstance.authorize()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        locationManager.startUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: LocationManagerDelegate methods
+    func receivedWeatherUpdate(responseJSON: JSON) {
+        
     }
 
 

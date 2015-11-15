@@ -5,6 +5,8 @@
 //  Created by Rj on 16/11/2015.
 //  Copyright © 2015 Techiepandas. All rights reserved.
 //
+// swiftlint:disable line_length
+// swiftlint:disable trailing_newline
 
 import UIKit
 
@@ -43,4 +45,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
