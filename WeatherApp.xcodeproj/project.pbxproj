@@ -36,6 +36,7 @@
 		02BFA9DC1BF912E1005C40B5 /* WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02BFA9E01BF912E1005C40B5 /* WeatherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppTests.swift; sourceTree = "<group>"; };
 		02BFA9E21BF912E1005C40B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02BFA9EB1BF91398005C40B5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +60,7 @@
 		02BFA9BF1BF912E1005C40B5 = {
 			isa = PBXGroup;
 			children = (
+				02BFA9EB1BF91398005C40B5 /* README.md */,
 				02BFA9CA1BF912E1005C40B5 /* WeatherApp */,
 				02BFA9DF1BF912E1005C40B5 /* WeatherAppTests */,
 				02BFA9C91BF912E1005C40B5 /* Products */,
@@ -388,6 +390,7 @@
 				02BFA9E71BF912E1005C40B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		02BFA9E81BF912E1005C40B5 /* Build configuration list for PBXNativeTarget "WeatherAppTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +399,7 @@
 				02BFA9EA1BF912E1005C40B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

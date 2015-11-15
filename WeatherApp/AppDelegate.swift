@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  WeatherApp
 //
-//  Created by Preethi on 16/11/2015.
+//  Created by Rj on 16/11/2015.
 //  Copyright © 2015 Techiepandas. All rights reserved.
 //
 
