@@ -11,16 +11,12 @@ import Alamofire
 import SwiftyJSON
 
 class WeatherApiClient: NSObject {
-    
+    // MARK: Shared singleton
     class var sharedInstance: WeatherApiClient {
         struct Static {
             static let instance: WeatherApiClient = WeatherApiClient()
         }
         return Static.instance
-    }
-    
-    override init() {
-        print(Config.apiUrl)
     }
     
     // MARK: Public methods

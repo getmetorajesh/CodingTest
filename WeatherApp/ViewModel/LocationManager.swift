@@ -12,15 +12,18 @@ import SwiftyJSON
 
 protocol LocationMangerDelegate{
     func receivedWeatherUpdate(responseJSON: JSON)
+    func errorResponse(error: NSError)
+    func alertWithTitle(title: String, message: String)
 }
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
+    // MARK: Properties
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation?
     var apiClient = WeatherApiClient.sharedInstance
     var delegate = LocationMangerDelegate?()
 
-    
+    //MARK: Singleton
     class var sharedInstance: LocationManager {
         struct Static {
             static let instance: LocationManager = LocationManager()
@@ -30,7 +33,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     override init() {
         super.init()
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
@@ -43,26 +45,19 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             case .AuthorizedWhenInUse:
                 print("LocationManager: Authorized")
             case .Denied:
-                alertWithTitle("Not Determined",
+                self.delegate?.alertWithTitle("Not Determined",
                     message: "Please enable location services and try again!")
             case .NotDetermined:
                 // request access
                 locationManager.requestWhenInUseAuthorization()
             case .Restricted:
-                alertWithTitle("Restricted",
+                self.delegate?.alertWithTitle("Restricted",
                     message: "Please enable location services and try again!")
             }
         } else {
-            alertWithTitle("Not Enabled",
+            self.delegate?.alertWithTitle("Not Enabled",
                 message: "Location services are not enabled.")
         }
-    }
-    
-    func alertWithTitle(title: String, message: String) {
-        UIAlertView(title: title,
-            message: message,
-            delegate: nil,
-            cancelButtonTitle: "OK").show()
     }
     
     func startUpdatingLocation() {
@@ -75,10 +70,11 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
                 // Yes, only when our app is in use
                 locationManager.startUpdatingLocation()
             default:
-                print("Location Manager: Not started")
+                self.delegate?.alertWithTitle("Not Enabled",
+                    message: "Location services are not enabled on this device")
             }
         } else {
-            alertWithTitle("Not Enabled",
+            self.delegate?.alertWithTitle("Not Enabled",
                 message: "Location services are not enabled on this device")
         }
     }
@@ -92,12 +88,14 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations.last!
+        self.stopUpdatingLocation()
+        // Stop the location manager as soon as we get the location
         apiClient.getWeatherForLatitude((currentLocation?.coordinate.latitude)!,
             longitude: (currentLocation?.coordinate.longitude)!,
             success: { (responseJSON) -> Void in
                 self.delegate?.receivedWeatherUpdate(responseJSON)
             }) { (error) -> Void in
-                //TODO://
+                self.delegate?.errorResponse(error)
         }
     }
 }

@@ -13,7 +13,6 @@
 		02BFA9D11BF912E1005C40B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02BFA9CF1BF912E1005C40B5 /* Main.storyboard */; };
 		02BFA9D31BF912E1005C40B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02BFA9D21BF912E1005C40B5 /* Assets.xcassets */; };
 		02BFA9D61BF912E1005C40B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02BFA9D41BF912E1005C40B5 /* LaunchScreen.storyboard */; };
-		02BFA9E11BF912E1005C40B5 /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BFA9E01BF912E1005C40B5 /* WeatherAppTests.swift */; };
 		02BFA9EE1BF91459005C40B5 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 02BFA9ED1BF91459005C40B5 /* .swiftlint.yml */; };
 		02BFA9F01BF91485005C40B5 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 02BFA9EF1BF91485005C40B5 /* Podfile */; };
 		02BFA9F81BF91BEA005C40B5 /* WeatherApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BFA9F71BF91BEA005C40B5 /* WeatherApiClient.swift */; };
@@ -44,7 +43,6 @@
 		02BFA9D51BF912E1005C40B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02BFA9D71BF912E1005C40B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02BFA9DC1BF912E1005C40B5 /* WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		02BFA9E01BF912E1005C40B5 /* WeatherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppTests.swift; sourceTree = "<group>"; };
 		02BFA9E21BF912E1005C40B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02BFA9EB1BF91398005C40B5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		02BFA9ED1BF91459005C40B5 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 		02BFA9DF1BF912E1005C40B5 /* WeatherAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				02BFA9E01BF912E1005C40B5 /* WeatherAppTests.swift */,
 				02BFA9E21BF912E1005C40B5 /* Info.plist */,
 				02BFAA001BF91EF3005C40B5 /* WeatherApiClientTests.swift */,
 			);
@@ -350,7 +347,6 @@
 				02BFA9F91BF91BEA005C40B5 /* WeatherApiClient.swift in Sources */,
 				02BFA9FC1BF91D0E005C40B5 /* Config.swift in Sources */,
 				02BFAA011BF91EF3005C40B5 /* WeatherApiClientTests.swift in Sources */,
-				02BFA9E11BF912E1005C40B5 /* WeatherAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

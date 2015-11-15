@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,12 +17,65 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dt9-PZ-7Py">
+                                <rect key="frame" x="20" y="0.0" width="560" height="600"/>
+                                <animations/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Obtaining location information ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FY3-Lo-Lbg">
+                                <rect key="frame" x="40" y="162" width="520" height="380"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="412" id="GIK-9g-U6b"/>
+                                    <constraint firstAttribute="width" constant="412" id="bRd-uI-e12"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GIK-9g-U6b"/>
+                                        <exclude reference="bRd-uI-e12"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="277.5" placeholderIntrinsicHeight="38.5" text="Updating ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3N0-AD-11F">
+                                <rect key="frame" x="40" y="40.5" width="277.5" height="38.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.88627451660000001" green="0.98431372640000003" blue="0.64705884459999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="FY3-Lo-Lbg" secondAttribute="trailing" constant="20" id="08J-MQ-nut"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FY3-Lo-Lbg" secondAttribute="bottom" constant="58" id="4Aq-gw-5kT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dt9-PZ-7Py" secondAttribute="trailing" id="4YJ-ZG-ecw"/>
+                            <constraint firstItem="dt9-PZ-7Py" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="82O-JE-3YT"/>
+                            <constraint firstItem="FY3-Lo-Lbg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="GYt-Db-iHK"/>
+                            <constraint firstItem="dt9-PZ-7Py" firstAttribute="top" secondItem="3N0-AD-11F" secondAttribute="bottom" constant="-79" id="Pu9-Qt-ccF"/>
+                            <constraint firstItem="3N0-AD-11F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Rhw-pp-xky"/>
+                            <constraint firstItem="FY3-Lo-Lbg" firstAttribute="top" secondItem="3N0-AD-11F" secondAttribute="bottom" constant="83" id="WG2-hw-0Yy"/>
+                            <constraint firstItem="dt9-PZ-7Py" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZDK-xL-zSG"/>
+                            <constraint firstItem="dt9-PZ-7Py" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="u6r-Lc-L3d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FY3-Lo-Lbg" secondAttribute="trailing" constant="78" id="yKl-rQ-h1o"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="yKl-rQ-h1o"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="lblTemperature" destination="3N0-AD-11F" id="gtZ-0i-9RU"/>
+                        <outlet property="txtResponse" destination="FY3-Lo-Lbg" id="fIh-j9-Wjg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="260" y="218"/>
         </scene>
     </scenes>
 </document>

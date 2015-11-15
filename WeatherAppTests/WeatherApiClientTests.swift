@@ -35,10 +35,9 @@ class WeatherApiClientTests: XCTestCase {
         waitForExpectationsWithTimeout(10, handler: nil)
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
+    func testWeatherApiPerformance() {
         self.measureBlock {
-            // Put the code you want to measure the time of here.
+            self.testWeatherApi()
         }
     }
 
